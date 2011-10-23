@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
 
 namespace BinDecCalculator
 {
@@ -119,6 +120,28 @@ namespace BinDecCalculator
             catch
             {
                 SystemSounds.Beep.Play();
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox fAbout = new AboutBox();
+            fAbout.Show();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(saveFile.FileName);
+                writer.Write(tbOut.Text);
+                writer.Close();
             }
         }
     }

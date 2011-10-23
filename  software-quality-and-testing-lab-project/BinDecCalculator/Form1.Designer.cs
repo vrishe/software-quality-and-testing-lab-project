@@ -48,13 +48,20 @@
             this.btnLocalClear = new System.Windows.Forms.Button();
             this.btnBackspace = new System.Windows.Forms.Button();
             this.tbOut = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbSystems.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn9
             // 
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn9.Location = new System.Drawing.Point(104, 22);
+            this.btn9.Location = new System.Drawing.Point(104, 37);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(40, 40);
             this.btn9.TabIndex = 9;
@@ -65,7 +72,7 @@
             // btn6
             // 
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn6.Location = new System.Drawing.Point(104, 68);
+            this.btn6.Location = new System.Drawing.Point(104, 83);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(40, 40);
             this.btn6.TabIndex = 6;
@@ -76,7 +83,7 @@
             // btn3
             // 
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn3.Location = new System.Drawing.Point(104, 114);
+            this.btn3.Location = new System.Drawing.Point(104, 129);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(40, 40);
             this.btn3.TabIndex = 3;
@@ -87,7 +94,7 @@
             // btn8
             // 
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn8.Location = new System.Drawing.Point(58, 22);
+            this.btn8.Location = new System.Drawing.Point(58, 37);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(40, 40);
             this.btn8.TabIndex = 8;
@@ -98,7 +105,7 @@
             // btn5
             // 
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn5.Location = new System.Drawing.Point(58, 68);
+            this.btn5.Location = new System.Drawing.Point(58, 83);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(40, 40);
             this.btn5.TabIndex = 5;
@@ -109,7 +116,7 @@
             // btn2
             // 
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn2.Location = new System.Drawing.Point(58, 114);
+            this.btn2.Location = new System.Drawing.Point(58, 129);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(40, 40);
             this.btn2.TabIndex = 2;
@@ -120,7 +127,7 @@
             // btn7
             // 
             this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn7.Location = new System.Drawing.Point(12, 22);
+            this.btn7.Location = new System.Drawing.Point(12, 37);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(40, 40);
             this.btn7.TabIndex = 7;
@@ -131,7 +138,7 @@
             // btn4
             // 
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn4.Location = new System.Drawing.Point(12, 68);
+            this.btn4.Location = new System.Drawing.Point(12, 83);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(40, 40);
             this.btn4.TabIndex = 4;
@@ -142,7 +149,7 @@
             // btn1
             // 
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn1.Location = new System.Drawing.Point(12, 114);
+            this.btn1.Location = new System.Drawing.Point(12, 129);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(40, 40);
             this.btn1.TabIndex = 1;
@@ -153,7 +160,7 @@
             // btnPoint
             // 
             this.btnPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnPoint.Location = new System.Drawing.Point(104, 160);
+            this.btnPoint.Location = new System.Drawing.Point(104, 175);
             this.btnPoint.Name = "btnPoint";
             this.btnPoint.Size = new System.Drawing.Size(40, 40);
             this.btnPoint.TabIndex = 10;
@@ -164,7 +171,7 @@
             // btn0
             // 
             this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn0.Location = new System.Drawing.Point(12, 160);
+            this.btn0.Location = new System.Drawing.Point(12, 175);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(86, 40);
             this.btn0.TabIndex = 0;
@@ -177,7 +184,7 @@
             this.gbSystems.Controls.Add(this.rbDecimal);
             this.gbSystems.Controls.Add(this.rbBinary);
             this.gbSystems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gbSystems.Location = new System.Drawing.Point(469, 22);
+            this.gbSystems.Location = new System.Drawing.Point(469, 37);
             this.gbSystems.Name = "gbSystems";
             this.gbSystems.Size = new System.Drawing.Size(98, 86);
             this.gbSystems.TabIndex = 12;
@@ -212,7 +219,7 @@
             // btnConvert
             // 
             this.btnConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnConvert.Location = new System.Drawing.Point(475, 162);
+            this.btnConvert.Location = new System.Drawing.Point(475, 177);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(86, 38);
             this.btnConvert.TabIndex = 0;
@@ -223,7 +230,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnClear.Location = new System.Drawing.Point(475, 118);
+            this.btnClear.Location = new System.Drawing.Point(475, 133);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(86, 38);
             this.btnClear.TabIndex = 11;
@@ -234,7 +241,7 @@
             // btnNegPos
             // 
             this.btnNegPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnNegPos.Location = new System.Drawing.Point(150, 22);
+            this.btnNegPos.Location = new System.Drawing.Point(150, 37);
             this.btnNegPos.Name = "btnNegPos";
             this.btnNegPos.Size = new System.Drawing.Size(40, 86);
             this.btnNegPos.TabIndex = 9;
@@ -245,7 +252,7 @@
             // btnLocalClear
             // 
             this.btnLocalClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnLocalClear.Location = new System.Drawing.Point(150, 114);
+            this.btnLocalClear.Location = new System.Drawing.Point(150, 129);
             this.btnLocalClear.Name = "btnLocalClear";
             this.btnLocalClear.Size = new System.Drawing.Size(40, 40);
             this.btnLocalClear.TabIndex = 3;
@@ -256,7 +263,7 @@
             // btnBackspace
             // 
             this.btnBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBackspace.Location = new System.Drawing.Point(150, 160);
+            this.btnBackspace.Location = new System.Drawing.Point(150, 175);
             this.btnBackspace.Name = "btnBackspace";
             this.btnBackspace.Size = new System.Drawing.Size(40, 40);
             this.btnBackspace.TabIndex = 10;
@@ -268,7 +275,7 @@
             // 
             this.tbOut.BackColor = System.Drawing.SystemColors.Window;
             this.tbOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbOut.Location = new System.Drawing.Point(196, 12);
+            this.tbOut.Location = new System.Drawing.Point(196, 27);
             this.tbOut.Multiline = true;
             this.tbOut.Name = "tbOut";
             this.tbOut.ReadOnly = true;
@@ -278,11 +285,60 @@
             this.tbOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbOut.TextChanged += new System.EventHandler(this.tbOut_TextChanged);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(581, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 221);
+            this.ClientSize = new System.Drawing.Size(581, 232);
             this.Controls.Add(this.tbOut);
             this.Controls.Add(this.gbSystems);
             this.Controls.Add(this.btnClear);
@@ -301,11 +357,15 @@
             this.Controls.Add(this.btnNegPos);
             this.Controls.Add(this.btn6);
             this.Controls.Add(this.btn9);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "fMain";
             this.Text = "BinDec Calculator";
             this.gbSystems.ResumeLayout(false);
             this.gbSystems.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,6 +393,12 @@
         private System.Windows.Forms.Button btnLocalClear;
         private System.Windows.Forms.Button btnBackspace;
         private System.Windows.Forms.TextBox tbOut;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
