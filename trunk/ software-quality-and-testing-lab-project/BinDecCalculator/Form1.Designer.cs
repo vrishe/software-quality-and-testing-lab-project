@@ -240,6 +240,7 @@
             this.btnNegPos.TabIndex = 9;
             this.btnNegPos.Text = "+/-";
             this.btnNegPos.UseVisualStyleBackColor = true;
+            this.btnNegPos.Click += new System.EventHandler(this.btnNegPos_Click);
             // 
             // btnLocalClear
             // 
@@ -265,6 +266,7 @@
             // 
             // tbOut
             // 
+            this.tbOut.BackColor = System.Drawing.SystemColors.Window;
             this.tbOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbOut.Location = new System.Drawing.Point(196, 12);
             this.tbOut.Multiline = true;
