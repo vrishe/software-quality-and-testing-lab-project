@@ -17,6 +17,16 @@ namespace BinDecCalculator
             InitializeComponent();
         }
 
+        private void tbOut_TextChanged(object sender, EventArgs e)
+        {
+            tbOut.SelectionStart = tbOut.Text.Length;
+            tbOut.ScrollToCaret();
+            if (tbOut.Text.Length > 0)
+                gbSystems.Enabled = false;
+            else
+                gbSystems.Enabled = true;
+        }
+
         private void rbBinary_CheckedChanged(object sender, EventArgs e)
         {
             btn2.Enabled = !btn2.Enabled;
@@ -100,10 +110,16 @@ namespace BinDecCalculator
             }
         }
 
-        private void tbOut_TextChanged(object sender, EventArgs e)
+        private void btnNegPos_Click(object sender, EventArgs e)
         {
-            tbOut.SelectionStart = tbOut.Text.Length;
-            tbOut.ScrollToCaret();
+            try
+            {
+                Log.NegPosChange(tbOut);
+            }
+            catch
+            {
+                SystemSounds.Beep.Play();
+            }
         }
     }
 }

@@ -11,7 +11,8 @@ namespace BinDecCalculator
     {
         private static int logLines { get; set; }
         private static int activeLine { get; set; }
-        static Log() { logLines = 0; activeLine = -1; }
+        private static bool activeIsNegative { get; set; }
+        static Log() { logLines = 0; activeLine = -1; activeIsNegative = false; }
 
         internal static void addDigit(TextBox tbOut, string digit, bool binary)
         {
@@ -38,19 +39,23 @@ namespace BinDecCalculator
         }
         internal static void delDigit(TextBox tbOut)
         {
-            if (logLines == 0 || tbOut.Lines[activeLine].Length == 0)
+            int length = tbOut.Lines[activeLine].Length;
+            int delta = (activeIsNegative ? 1 : 0);
+            if (logLines == 0 || length == 0)
                 throw new NullReferenceException();
 
-            if (tbOut.Lines[activeLine].Length > 1)
-                tbOut.Text = tbOut.Text.Remove(tbOut.Text.Length - 1, 1);
+            if (length > 1 + delta)
+                tbOut.Text = tbOut.Text.Remove(length - 1, 1);
             else
             {
-                tbOut.Text = tbOut.Text.Remove(tbOut.Text.Length - 1, 1);
-                if (tbOut.Text.Length == 0)
+                tbOut.Text = tbOut.Text.Remove(length - 1 - delta, 1 + delta);
+                if (length - 1 - delta == 0)
                 {
                     logLines = 0;
                     activeLine = -1;
                 }
+                if (delta > 0)
+                    activeIsNegative = !activeIsNegative;
             }
         }
         internal static void addPoint(TextBox tbOut)
@@ -77,15 +82,29 @@ namespace BinDecCalculator
 
         internal static void SaveResult(TextBox tbOut, bool toBinary)
         {
+            string correction = "";
+            if (activeIsNegative)
+            {
+                tbOut.Text = tbOut.Text.Remove(tbOut.Text.Length - tbOut.Lines[activeLine].Length, 1);
+                correction = "-";
+            }
             if (toBinary)
             {
-                string result = tbOut.Lines[activeLine] + " = " + BinDecConverter.DecToBin(tbOut.Lines[activeLine]);
+                string result = 
+                    correction +
+                    tbOut.Lines[activeLine] + 
+                    " = " + correction +
+                    BinDecConverter.DecToBin(tbOut.Lines[activeLine]);
                 tbOut.Text = tbOut.Text.Remove(tbOut.Text.Length - tbOut.Lines[activeLine].Length, tbOut.Lines[activeLine].Length);
                 tbOut.Text = tbOut.Text.Insert(tbOut.Text.Length, result);
             }
             else
             {
-                string result = tbOut.Lines[activeLine] + " = " + BinDecConverter.BinToDec(tbOut.Lines[activeLine]);
+                string result =
+                    correction +
+                    tbOut.Lines[activeLine] + 
+                    " = " + correction +
+                    BinDecConverter.BinToDec(tbOut.Lines[activeLine]);
                 tbOut.Text = tbOut.Text.Remove(tbOut.Text.Length - tbOut.Lines[activeLine].Length, tbOut.Lines[activeLine].Length);
                 tbOut.Text = tbOut.Text.Insert(tbOut.Text.Length, result);
             }
@@ -108,6 +127,19 @@ namespace BinDecCalculator
             tbOut.Clear();
             activeLine = -1;
             logLines = 0;
+        }
+
+        internal static void NegPosChange(TextBox tbOut)
+        {
+            if (activeIsNegative)
+                tbOut.Text = tbOut.Text.Remove(tbOut.Text.Length - tbOut.Lines[activeLine].Length, 1);
+            else
+                if (tbOut.Lines[activeLine].Length > 0)
+                    tbOut.Text = tbOut.Text.Insert(tbOut.Text.Length - tbOut.Lines[activeLine].Length, "-");
+                else
+                    throw new NullReferenceException();
+
+            activeIsNegative = !activeIsNegative;
         }
     }
 }
