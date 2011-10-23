@@ -42,12 +42,12 @@
             this.gbSystems = new System.Windows.Forms.GroupBox();
             this.rbDecimal = new System.Windows.Forms.RadioButton();
             this.rbBinary = new System.Windows.Forms.RadioButton();
-            this.btnNext = new System.Windows.Forms.Button();
+            this.btnConvert = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.tbOut = new System.Windows.Forms.RichTextBox();
             this.btnNegPos = new System.Windows.Forms.Button();
             this.btnLocalClear = new System.Windows.Forms.Button();
             this.btnBackspace = new System.Windows.Forms.Button();
+            this.tbOut = new System.Windows.Forms.TextBox();
             this.gbSystems.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,8 +157,9 @@
             this.btnPoint.Name = "btnPoint";
             this.btnPoint.Size = new System.Drawing.Size(40, 40);
             this.btnPoint.TabIndex = 10;
-            this.btnPoint.Text = ".";
+            this.btnPoint.Text = ",";
             this.btnPoint.UseVisualStyleBackColor = true;
+            this.btnPoint.Click += new System.EventHandler(this.btnPoint_Click);
             // 
             // btn0
             // 
@@ -208,16 +209,16 @@
             this.rbBinary.UseVisualStyleBackColor = true;
             this.rbBinary.CheckedChanged += new System.EventHandler(this.rbBinary_CheckedChanged);
             // 
-            // btnNext
+            // btnConvert
             // 
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnNext.Location = new System.Drawing.Point(475, 162);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(86, 38);
-            this.btnNext.TabIndex = 0;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnConvert.Location = new System.Drawing.Point(475, 162);
+            this.btnConvert.Name = "btnConvert";
+            this.btnConvert.Size = new System.Drawing.Size(86, 38);
+            this.btnConvert.TabIndex = 0;
+            this.btnConvert.Text = "Convert";
+            this.btnConvert.UseVisualStyleBackColor = true;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
             // btnClear
             // 
@@ -229,18 +230,6 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // tbOut
-            // 
-            this.tbOut.Enabled = false;
-            this.tbOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbOut.Location = new System.Drawing.Point(196, 12);
-            this.tbOut.Name = "tbOut";
-            this.tbOut.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tbOut.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.tbOut.Size = new System.Drawing.Size(267, 198);
-            this.tbOut.TabIndex = 13;
-            this.tbOut.Text = "";
             // 
             // btnNegPos
             // 
@@ -261,6 +250,7 @@
             this.btnLocalClear.TabIndex = 3;
             this.btnLocalClear.Text = "C";
             this.btnLocalClear.UseVisualStyleBackColor = true;
+            this.btnLocalClear.Click += new System.EventHandler(this.btnLocalClear_Click);
             // 
             // btnBackspace
             // 
@@ -273,6 +263,19 @@
             this.btnBackspace.UseVisualStyleBackColor = true;
             this.btnBackspace.Click += new System.EventHandler(this.btnBackspace_Click);
             // 
+            // tbOut
+            // 
+            this.tbOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbOut.Location = new System.Drawing.Point(196, 12);
+            this.tbOut.Multiline = true;
+            this.tbOut.Name = "tbOut";
+            this.tbOut.ReadOnly = true;
+            this.tbOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbOut.Size = new System.Drawing.Size(267, 197);
+            this.tbOut.TabIndex = 13;
+            this.tbOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbOut.TextChanged += new System.EventHandler(this.tbOut_TextChanged);
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,7 +284,7 @@
             this.Controls.Add(this.tbOut);
             this.Controls.Add(this.gbSystems);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.btn0);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btnBackspace);
@@ -302,6 +305,7 @@
             this.gbSystems.ResumeLayout(false);
             this.gbSystems.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -321,12 +325,12 @@
         private System.Windows.Forms.GroupBox gbSystems;
         private System.Windows.Forms.RadioButton rbDecimal;
         private System.Windows.Forms.RadioButton rbBinary;
-        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.RichTextBox tbOut;
         private System.Windows.Forms.Button btnNegPos;
         private System.Windows.Forms.Button btnLocalClear;
         private System.Windows.Forms.Button btnBackspace;
+        private System.Windows.Forms.TextBox tbOut;
     }
 }
 
