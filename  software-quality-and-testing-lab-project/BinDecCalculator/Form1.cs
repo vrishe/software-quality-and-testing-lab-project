@@ -17,8 +17,6 @@ namespace BinDecCalculator
             InitializeComponent();
         }
 
-        #region Interface manipulations
-//      textBox.Text=texBox.Text.Remove(texBox.GetFirstCharIndexFromLine(LineIndex),texBox.Lines[LineIndex].Length+1);
         private void rbBinary_CheckedChanged(object sender, EventArgs e)
         {
             btn2.Enabled = !btn2.Enabled;
@@ -33,7 +31,7 @@ namespace BinDecCalculator
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            tbOut.Clear();
+            Log.Clear(tbOut);
         }
 
         private void btnNumeric_Click(object sender, EventArgs e)
@@ -44,6 +42,19 @@ namespace BinDecCalculator
                     Log.addDigit(tbOut, ((Button)sender).Text, true);
                 else
                     Log.addDigit(tbOut, ((Button)sender).Text, false);
+            }
+            catch
+            {
+                SystemSounds.Beep.Play();
+            }
+            
+        }
+
+        private void btnPoint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Log.addPoint(tbOut);
             }
             catch
             {
@@ -62,18 +73,37 @@ namespace BinDecCalculator
                 SystemSounds.Beep.Play();
             }
         }
-        #endregion
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private void btnConvert_Click(object sender, EventArgs e)
         {
             try
             {
+                Log.SaveResult(tbOut, rbDecimal.Checked);
                 Log.newNummber(tbOut);
             }
             catch
             {
                 SystemSounds.Beep.Play();
             }
+
+        }
+
+        private void btnLocalClear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Log.delActive(tbOut);
+            }
+            catch
+            {
+                SystemSounds.Beep.Play();
+            }
+        }
+
+        private void tbOut_TextChanged(object sender, EventArgs e)
+        {
+            tbOut.SelectionStart = tbOut.Text.Length;
+            tbOut.ScrollToCaret();
         }
     }
 }
