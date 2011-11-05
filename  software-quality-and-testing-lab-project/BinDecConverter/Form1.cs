@@ -20,7 +20,7 @@ namespace BinDecConverter
         {
             tbOut.SelectionStart = tbOut.Text.Length;
             tbOut.ScrollToCaret();
-            if (tbOut.Text.Length > 0)
+            if (tbOut.Lines.Length > 0 && tbOut.Lines[tbOut.Lines.Length - 1].Length > 0)
                 gbSystems.Enabled = false;
             else
                 gbSystems.Enabled = true;
@@ -89,6 +89,7 @@ namespace BinDecConverter
             {
                 Log.SaveResult(tbOut, rbDecimal.Checked);
                 Log.newNumber(tbOut);
+
             }
             catch
             {
