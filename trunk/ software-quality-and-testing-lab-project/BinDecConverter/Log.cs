@@ -38,9 +38,9 @@ namespace BinDecConverter
         }
         internal static void delDigit(TextBox tbOut)
         {
-            int length = tbOut.Lines[activeLine].Length;
+            int length = tbOut.Text.Length;
             int delta = (activeIsNegative ? 1 : 0);
-            if (logLines == 0 || length == 0)
+            if (logLines == 0 || tbOut.Lines[activeLine].Length == 0)
                 throw new NullReferenceException();
 
             if (length > 1 + delta)

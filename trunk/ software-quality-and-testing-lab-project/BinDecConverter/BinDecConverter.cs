@@ -62,12 +62,13 @@ namespace BinDecConverter
             if (index < 0)
             {
                 Binary += ',';
+                length++;
                 index = length - 1;
             }
             Int64 intPart = Convert.ToInt64(Binary.Substring(0, index), 2);
             string result = intPart.ToString();
 
-            if (length - index < 1)
+            if (length - index < 2)
                 return result;
 
             int decPartLength = length - index - 1;
